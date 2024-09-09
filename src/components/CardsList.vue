@@ -14,12 +14,12 @@
         <p class="description">{{ card.descricao }}</p>
       </div>
     </a>
-    {{ url }}
   </section>
 </template>
 
 <script>
 import { api } from "@/services.js";
+import { serialize } from "@/helpers.js";
 export default {
   name: "CardList",
   data() {
@@ -29,12 +29,8 @@ export default {
   },
   computed: {
     url() {
-      let queryString = "";
-      for (let key in this.$route.query) {
-        queryString += `&${key}=${this.$route.query[key]}`;
-      }
-      console.log(queryString);
-      return "/cardLinks?_limit=10" + queryString;
+      const query = serialize(this.$route.query);
+      return `/cardLinks?_limit=10"${query}`;
     },
   },
   methods: {
