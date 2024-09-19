@@ -5,11 +5,13 @@
         <img class="logo" src="../assets/images/logo_employee.jpg" alt="Logo" />
       </div>
       <div>
-        <img
-          class="icon"
-          src="../assets/icons/circle-user.svg"
-          alt="Configurações do usuario"
-        />
+        <router-link to="/login">
+          <img
+            class="icon"
+            src="../assets/icons/circle-user.svg"
+            alt="Configurações do usuario"
+          />
+        </router-link>
       </div>
     </header>
   </div>
