@@ -62,4 +62,37 @@ body {
   grid-column: 2 /3;
   grid-row: 2/3;
 }
+.btn {
+  display: block;
+  padding: 10px 30px;
+  background: #42b983;
+  border-radius: 4px;
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+  box-shadow: 0 4px 8px rgba(30, 60, 90, 0.2);
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  border-radius: 4px;
+  border: 1px solid white;
+  padding: 15px;
+  color: #60656c;
+  transition: all 0.3s;
+  font-size: 1rem;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  margin-bottom: 15px;
+}
+
+input:hover,
+input:focus,
+textarea:hover,
+textarea:focus {
+  outline: none;
+  border-color: #42b983;
+}
 </style>
