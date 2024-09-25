@@ -12,16 +12,16 @@
         v-model="login.password"
       />
       <button class="btn" v-on:click.prevent="logar">Entrar</button>
-      <LoginCriar />
+      <CreateLogin />
     </form>
   </section>
 </template>
 <script>
-import LoginCriar from "@/components/LoginCriar.vue";
+import CreateLogin from "@/components/CreateLogin.vue";
 export default {
   name: "LoginView",
   components: {
-    LoginCriar,
+    CreateLogin,
   },
   data() {
     return {
@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     logar() {
-      this.$store.commit("UPDATE_LOGIN", true);
+      this.$store.dispatch("getUser", this.login.email);
     },
   },
 };

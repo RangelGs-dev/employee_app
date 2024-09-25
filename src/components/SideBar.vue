@@ -7,42 +7,48 @@
         v-on:click="openSidebarWidth"
         v-bind:class="{ widthWhenOpen: sidebarOpen }"
       >
-        <a class="nav-link" href="#">
-          <img
-            class="icon"
-            src="../assets/icons/home-48.svg"
-            alt="Configurações do usuario"
-          />
-          <span v-bind:class="{ display: displayNone }">Home</span>
-        </a>
+        <router-link to="/" class="router-nav">
+          <a class="nav-link" href="#">
+            <img
+              class="icon"
+              src="../assets/icons/home-48.svg"
+              alt="Configurações do usuario"
+            />
+            <span v-bind:class="{ display: displayNone }">Home</span>
+          </a>
+        </router-link>
       </div>
       <div
         class="nav-item"
         v-on:click="openSidebarWidth"
         v-bind:class="{ widthWhenOpen: sidebarOpen }"
       >
-        <a class="nav-link" href="#">
-          <img
-            class="icon"
-            src="../assets/icons/comunica-48.svg"
-            alt="Configurações do usuario"
-          />
-          <span v-bind:class="{ display: displayNone }">Noticias</span>
-        </a>
+        <router-link to="/noticias" class="router-nav">
+          <a class="nav-link" href="#">
+            <img
+              class="icon"
+              src="../assets/icons/comunica-48.svg"
+              alt="Configurações do usuario"
+            />
+            <span v-bind:class="{ display: displayNone }">Noticias</span>
+          </a>
+        </router-link>
       </div>
       <div
         class="nav-item"
         v-on:click="openSidebarWidth"
         v-bind:class="{ widthWhenOpen: sidebarOpen }"
       >
-        <a class="nav-link" href="#">
-          <img
-            class="icon"
-            src="../assets/icons/settings-48.svg"
-            alt="Configurações do usuario"
-          />
-          <span v-bind:class="{ display: displayNone }">Settings</span>
-        </a>
+        <router-link to="/add-card-link" class="router-nav">
+          <a class="nav-link" href="#">
+            <img
+              class="icon"
+              src="../assets/icons/settings-48.svg"
+              alt="Configurações do usuario"
+            />
+            <span v-bind:class="{ display: displayNone }">Settings</span>
+          </a>
+        </router-link>
       </div>
       <!-- </ul> -->
     </nav>
@@ -149,6 +155,10 @@ export default {
     margin-left: 0%;
     width: 72px;
   }
+}
+
+.router-nav {
+  text-decoration: none;
 }
 
 .nav-link span {
