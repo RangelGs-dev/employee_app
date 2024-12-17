@@ -23,14 +23,14 @@
         v-on:click="openSidebarWidth"
         v-bind:class="{ widthWhenOpen: sidebarOpen }"
       >
-        <router-link to="/noticias" class="router-nav">
+        <router-link to="/communicates" class="router-nav">
           <a class="nav-link" href="#">
             <img
               class="icon"
               src="../assets/icons/comunica-48.svg"
               alt="Configurações do usuario"
             />
-            <span v-bind:class="{ display: displayNone }">Noticias</span>
+            <span v-bind:class="{ display: displayNone }">Comunicados</span>
           </a>
         </router-link>
       </div>

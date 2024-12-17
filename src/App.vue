@@ -25,6 +25,9 @@ export default {
 * {
   box-sizing: border-box;
 }
+html {
+  font-size: 16px; /* 1rem será 16px */
+}
 body,
 ul,
 li,

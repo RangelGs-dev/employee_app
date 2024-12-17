@@ -17,8 +17,8 @@ export default {
 <style scoped>
 h2 {
   text-align: center;
-  margin-top: 40px;
-  margin-bottom: 10px;
+  margin: 20px 0px 20px 0px;
   color: #04aa6d;
+  font-size: 1.5rem;
 }
 </style>

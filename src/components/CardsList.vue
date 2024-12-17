@@ -10,8 +10,8 @@
         <img v-bind:src="card.iconPath" alt="" />
       </div>
       <div class="card-body">
-        <h2 class="title">{{ card.titulo }}</h2>
-        <p class="description">{{ card.descricao }}</p>
+        <h2 class="title">{{ card.title }}</h2>
+        <p class="description">{{ card.description }}</p>
       </div>
     </a>
   </section>
@@ -30,7 +30,8 @@ export default {
   computed: {
     url() {
       const query = serialize(this.$route.query);
-      return `/cardLinks?_limit=10"${query}`;
+      // return `/cardLinks?_limit=12"${query}`;
+      return query;
     },
   },
   methods: {
