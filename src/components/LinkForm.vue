@@ -2,19 +2,26 @@
   <div class="form-content">
     <form>
       <label for="title">Titulo</label>
-      <input id="title" name="title" type="text" v-model="title" />
+      <input id="title" name="title" type="text" v-model="title" required />
       <label for="iconPath">Icone</label>
-      <input id="iconPath" name="iconPath" type="text" v-model="iconPath" />
+      <input
+        id="iconPath"
+        name="iconPath"
+        type="text"
+        v-model="iconPath"
+        required
+      />
       <label for="description">Descrição</label>
       <input
         id="description"
         name="description"
         type="text"
         v-model="description"
+        required
       />
       <label for="link">Link</label>
-      <input id="link" name="link" type="text" v-model="link" />
-      <button class="btn" v-on:click.prevent="createNewLink">Entrar</button>
+      <input id="link" name="link" type="text" v-model="link" required />
+      <button class="btn" v-on:click.prevent="createNewLink">Criar</button>
     </form>
   </div>
 </template>

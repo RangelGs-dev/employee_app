@@ -1,22 +1,21 @@
 <template>
   <div id="app">
-    <!-- <side-bar class="side-bar"></side-bar> -->
-    <SideBar class="side-bar" />
     <TheHeader />
     <main class="main">
       <router-view />
     </main>
+    <TheFooter />
   </div>
 </template>
 
 <script>
+import TheFooter from "./components/TheFooter.vue";
 import TheHeader from "./components/TheHeader.vue";
-import SideBar from "./components/SideBar.vue";
 
 export default {
   components: {
-    SideBar,
     TheHeader,
+    TheFooter,
   },
 };
 </script>
@@ -26,7 +25,7 @@ export default {
   box-sizing: border-box;
 }
 html {
-  font-size: 16px; /* 1rem será 16px */
+  font-size: 16px;
 }
 body,
 ul,
@@ -40,17 +39,15 @@ img {
   margin: 0px;
 }
 body {
-  font-family: ui-sans-serif, system-ui, sans-serif, Apple Color Emoji,
-    Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-family: "Unimed Sans", ui-sans-serif, system-ui, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   color: #345;
 }
 
 #app {
-  display: grid;
+  position: relative;
   width: 100vw;
   height: 100vh;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: auto 1fr;
   overflow-x: hidden;
 }
 
@@ -58,13 +55,6 @@ body {
   display: none;
 }
 
-.side-bar {
-  grid-row: 1 /3;
-}
-.main {
-  grid-column: 2 /3;
-  grid-row: 2/3;
-}
 .btn {
   display: block;
   padding: 10px 30px;
@@ -87,7 +77,7 @@ textarea {
   color: #60656c;
   transition: all 0.3s;
   font-size: 1rem;
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: "Unimed Sans", Helvetica, Arial, sans-serif;
   margin-bottom: 15px;
 }
 

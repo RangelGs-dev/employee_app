@@ -1,50 +1,111 @@
 <template>
   <div class="header-container">
-    <header class="header">
-      <div class="image">
-        <img class="logo" src="../assets/images/logo_employee.jpg" alt="Logo" />
-      </div>
-      <div>
-        <router-link to="/login">
-          <img
-            class="icon"
-            src="../assets/icons/circle-user.svg"
-            alt="Configurações do usuario"
-          />
-        </router-link>
+    <header>
+      <div class="nav">
+        <div class="nav-logo">
+          <router-link to="/">
+            <img src="../assets/layout_set_logo.png" alt="logo Oeste do Pará" />
+          </router-link>
+        </div>
+
+        <div class="nav-search-user">
+          <!-- <input
+            type="text"
+            placeholder="Faça sua busca aqui"
+            class="nav-search-input hidden"
+          /> -->
+          <SearchLinks />
+          <div class="nav-user">
+            <router-link to="/">
+              <img
+                src="https://www.unimed.coop.br/site/o/sites-theme/images/icons/menu_login-icon-white.svg"
+                alt="user"
+              />
+              <p>Login</p>
+            </router-link>
+          </div>
+        </div>
       </div>
     </header>
   </div>
 </template>
 
 <script>
+import SearchLinks from "./searchLinks.vue";
 export default {
   name: "TheHeader",
+  components: {
+    SearchLinks,
+  },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.header-container {
-  background: #fff;
-  box-shadow: 0 1px 25px rgba(0, 0, 0, 0.16);
-  height: 80px;
-}
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100%;
-  padding: 0px 20px 0px 20px;
-}
-.logo {
-  max-width: 80px;
+header {
+  width: 100vw;
+  background-color: #ffffff;
+  margin-bottom: 60px;
+  padding: 20px 20px 10px 20px;
+  border-bottom: 1px solid #e7e7ed;
 }
 
-.icon {
-  max-width: 40px;
+.nav {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1753px;
+  margin: auto;
 }
-a {
-  color: #42b983;
+
+.nav-logo img {
+  max-width: 150px;
+  max-height: 65px;
+}
+
+.nav-search-user {
+  display: flex;
+  justify-content: end;
+  padding: 0.4375rem 0px 0.9375rem 0px;
+}
+
+.nav-search-input {
+  background: url(~@/assets/icons/search.svg) no-repeat;
+  padding: 10px 35px 10px 40px;
+  width: 260px;
+  background-size: 20px 20px;
+  background-position: left 10px center;
+  margin-right: 10px;
+  outline-color: #00995d;
+  box-shadow: 0 8px 8px rgba(30, 60, 90, 0.3);
+}
+
+.nav-user a {
+  display: flex;
+  justify-content: space-around;
+  border-radius: 0.25rem;
+  background-color: #00995d;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  box-shadow: 0 8px 8px rgba(30, 60, 90, 0.3);
+}
+
+.nav-user p {
+  color: #ffffff;
+}
+.nav-user img {
+  width: 22px;
+  color: #ffffff;
+  margin-right: 10px;
+}
+
+@media (max-width: 412px) {
+  .hidden {
+    display: none;
+  }
 }
 </style>

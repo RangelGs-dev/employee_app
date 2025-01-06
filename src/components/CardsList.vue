@@ -1,17 +1,21 @@
 <template>
   <section class="cards-container">
+    <div v-if="!cardLinks || cardLinks.length === 0">
+      <h1>Oh no, não encontramos nada. 😢</h1>
+    </div>
     <a
+      v-else
       class="card-link"
       v-for="card in cardLinks"
       v-bind:key="card.id"
-      v-bind:href="card.link"
+      v-bind:href="card.endereco_aplicacao"
     >
       <div class="card-icon">
-        <img v-bind:src="card.iconPath" alt="" />
+        <img v-bind:src="card.endereco_icone" alt="" />
       </div>
       <div class="card-body">
-        <h2 class="title">{{ card.title }}</h2>
-        <p class="description">{{ card.description }}</p>
+        <h2 class="title">{{ card.titulo }}</h2>
+        <p class="description">{{ card.descricao }}</p>
       </div>
     </a>
   </section>
@@ -53,8 +57,10 @@ export default {
 <style scoped>
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  width: 1753px;
+  grid-template-columns: repeat(4, minmax(235px, 1fr));
   gap: 40px;
+  margin: auto;
 }
 
 h2 {
@@ -102,5 +108,21 @@ a:hover {
   font-size: 14px;
   font-weight: 400px;
   color: #888ea8;
+}
+
+@media (max-width: 600px) {
+  .cards-container {
+    width: 500px;
+    grid-template-columns: 1fr;
+    margin: auto;
+  }
+}
+
+@media (max-width: 412px) {
+  .cards-container {
+    width: 345px;
+    grid-template-columns: 1fr;
+    margin: auto;
+  }
 }
 </style>

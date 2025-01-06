@@ -32,14 +32,13 @@ export default createStore({
   },
   actions: {
     getUser(context, payload) {
-      console.log(payload);
       api.get(`/usuario/${payload}`).then((response) => {
         context.commit("UPDATE_USER", response.data);
         context.commit("UPDATE_LOGIN", true);
       });
     },
     createCardLink(context, payload) {
-      api.post("/cardLinks", payload);
+      api.post("/add-card-link", payload);
     },
   },
   modules: {},
