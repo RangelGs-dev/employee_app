@@ -121,7 +121,7 @@ footer {
 .footer-container {
   display: flex;
   justify-content: space-between;
-  max-width: 1753px;
+  max-width: 1224px;
   margin: auto;
 }
 

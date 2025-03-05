@@ -70,7 +70,8 @@ body {
 }
 
 input,
-textarea {
+textarea,
+option {
   border-radius: 4px;
   border: 1px solid white;
   padding: 15px;
@@ -81,10 +82,26 @@ textarea {
   margin-bottom: 15px;
 }
 
+select {
+  border-radius: 4px;
+  border: 1px solid white;
+  padding: 15px;
+  color: #60656c;
+  background-color: #fff;
+  transition: all 0.3s;
+  font-size: 1rem;
+  font-family: "Unimed Sans", Helvetica, Arial, sans-serif;
+  margin-bottom: 15px;
+}
+
 input:hover,
 input:focus,
 textarea:hover,
-textarea:focus {
+textarea:focus,
+select:hover,
+select:focus,
+option:hover,
+option:focus {
   outline: none;
   border-color: #42b983;
 }

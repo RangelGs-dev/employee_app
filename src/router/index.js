@@ -2,7 +2,8 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import LoginView from "@/views/LoginView.vue";
 import AddCardLinkView from "@/views/AddCardLinkView.vue";
-import CommunicatesView from "@/views/CommunicatesView.vue";
+import ReleaseView from "@/views/ReleaseView.vue";
+import AddNewReleaseView from "@/views/AddNewReleaseView.vue";
 
 const routes = [
   {
@@ -25,9 +26,14 @@ const routes = [
     name: "noticias",
   },
   {
-    path: "/communicates",
-    name: "communicates",
-    component: CommunicatesView,
+    path: "/releases",
+    name: "releases",
+    component: ReleaseView,
+  },
+  {
+    path: "/add-release",
+    name: "add-release",
+    component: AddNewReleaseView,
   },
 ];
 

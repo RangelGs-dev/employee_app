@@ -57,7 +57,7 @@ export default {
 <style scoped>
 .cards-container {
   display: grid;
-  width: 1753px;
+  width: 1224px;
   grid-template-columns: repeat(4, minmax(235px, 1fr));
   gap: 40px;
   margin: auto;

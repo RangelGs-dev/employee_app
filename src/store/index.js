@@ -17,6 +17,11 @@ export default createStore({
       description: "",
       link: "",
     },
+    releaseItem: {
+      title: "",
+      tag: "",
+      description: "",
+    },
   },
   getters: {},
   mutations: {
@@ -29,6 +34,9 @@ export default createStore({
     UPDATE_LINK(state, payload) {
       state.cardLink = Object.assign(state.cardLink, payload);
     },
+    UPDATE_RELEASE(state, payload) {
+      state.releaseItem = Object.assign(state.releaseItem, payload);
+    },
   },
   actions: {
     getUser(context, payload) {
@@ -39,6 +47,9 @@ export default createStore({
     },
     createCardLink(context, payload) {
       api.post("/add-card-link", payload);
+    },
+    createRelease(context, payload) {
+      context.commit("UPDATE_RELEASE", payload);
     },
   },
   modules: {},

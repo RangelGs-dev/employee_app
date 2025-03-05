@@ -1,26 +1,38 @@
 <template>
   <div class="form-content">
     <form>
-      <label for="title">Titulo</label>
-      <input id="title" name="title" type="text" v-model="title" required />
-      <label for="iconPath">Icone</label>
+      <input
+        id="title"
+        name="title"
+        type="text"
+        v-model="title"
+        required
+        placeholder="Titulo"
+      />
       <input
         id="iconPath"
         name="iconPath"
         type="text"
         v-model="iconPath"
         required
+        placeholder="Icone"
       />
-      <label for="description">Descrição</label>
       <input
         id="description"
         name="description"
         type="text"
         v-model="description"
         required
+        placeholder="Descrição"
       />
-      <label for="link">Link</label>
-      <input id="link" name="link" type="text" v-model="link" required />
+      <input
+        id="link"
+        name="link"
+        type="text"
+        v-model="link"
+        required
+        placeholder="Link"
+      />
       <button class="btn" v-on:click.prevent="createNewLink">Criar</button>
     </form>
   </div>
@@ -83,22 +95,26 @@ form-content {
 
 form {
   display: grid;
-  grid-template-columns: 100px 1fr;
-  gap: 10px; /* Espaçamento entre colunas */
-  align-items: baseline;
+  /* grid-template-columns: 100px 1fr; */
+  /* gap: 10px; */
+  /* align-items: baseline; */
+  justify-content: center;
   margin: 0 auto;
   max-width: 600px;
   box-sizing: border-box;
 }
 
 input {
-  width: 100%;
-  max-width: 400px;
+  width: 400px;
+  box-shadow: 0 8px 8px rgba(30, 60, 90, 0.3);
+}
+
+select {
   box-shadow: 0 8px 8px rgba(30, 60, 90, 0.3);
 }
 
 .btn {
-  grid-column: 2;
+  /* grid-column: 2; */
   max-width: 400px;
   box-shadow: 0 8px 8px rgba(30, 60, 90, 0.3);
 }

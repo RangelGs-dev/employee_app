@@ -37,8 +37,7 @@ h2 {
 }
 
 .welcome {
-  /* margin-left: 288px; */
-  width: 1753px;
+  width: 1224px;
   margin: auto;
 }
 

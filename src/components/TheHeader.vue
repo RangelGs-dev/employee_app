@@ -2,18 +2,18 @@
   <div class="header-container">
     <header>
       <div class="nav">
-        <div class="nav-logo">
+        <div class="nav-menu">
           <router-link to="/">
             <img src="../assets/layout_set_logo.png" alt="logo Oeste do Pará" />
           </router-link>
+          <ul class="acesso-rapido">
+            <li>
+              <router-link to="/releases">Atualizações</router-link>
+            </li>
+          </ul>
         </div>
 
         <div class="nav-search-user">
-          <!-- <input
-            type="text"
-            placeholder="Faça sua busca aqui"
-            class="nav-search-input hidden"
-          /> -->
           <SearchLinks />
           <div class="nav-user">
             <router-link to="/">
@@ -53,11 +53,29 @@ header {
 .nav {
   display: flex;
   justify-content: space-between;
-  max-width: 1753px;
+  align-items: center;
+  max-width: 1224px;
   margin: auto;
 }
 
-.nav-logo img {
+.nav-menu {
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu li {
+  margin-left: 20px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  list-style: none;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #888ea8;
+}
+
+.nav-menu img {
   max-width: 150px;
   max-height: 65px;
 }
