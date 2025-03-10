@@ -9,29 +9,26 @@
         type="text"
         placeholder="Titulo"
       />
-      <input
-        id="description"
-        name="description"
-        type="text"
-        v-model="description"
-        required
-        placeholder="Descrição"
-      />
       <select name="tags" id="tags" v-model="tag">
         <option value="" selected disabled>Selecione uma tag</option>
         <option value="Piloto">Piloto</option>
         <option value="Correção">Correção</option>
         <option value="Versão">Versão</option>
       </select>
-      <button v-on:click.prevent="createNewRelease" class="btn">Clicar</button>
+      <TinyEditor v-on:update-content="updateContent" />
+      <button v-on:click.prevent="createNewRelease" class="btn btn-release">
+        Enviar
+      </button>
     </form>
-    {{ $store.state.releaseItem.tag }}
   </div>
 </template>
 
 <script>
+import TinyEditor from "./TinyEditor.vue";
+
 export default {
   name: "ReleaseForm",
+  components: { TinyEditor },
   computed: {
     title: {
       get() {
@@ -41,12 +38,14 @@ export default {
         this.$store.commit("UPDATE_RELEASE", { title: value });
       },
     },
-    description: {
+    editorContent: {
       get() {
         return this.$store.state.releaseItem.description;
       },
       set(value) {
-        this.$store.commit("UPDATE_RELEASE", { description: value });
+        this.$store.commit("UPDATE_RELEASE", {
+          editorContent: value,
+        });
       },
     },
     tag: {
@@ -59,8 +58,17 @@ export default {
     },
   },
   methods: {
+    updateContent(value) {
+      this.editorContent = value;
+    },
     createNewRelease() {
       this.$store.dispatch("createRelease", this.$store.state.releaseItem);
+      this.$store.commit("UPDATE_RELEASE", {
+        title: "",
+        tag: "",
+        editorContent: "",
+      });
+      this.updateContent = "";
     },
   },
 };
@@ -93,5 +101,9 @@ select {
   background-size: 20px;
   padding-right: 30px;
   box-shadow: 0 8px 8px rgba(30, 60, 90, 0.3);
+}
+
+.btn-release {
+  margin-top: 15px;
 }
 </style>

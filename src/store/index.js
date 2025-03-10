@@ -20,7 +20,7 @@ export default createStore({
     releaseItem: {
       title: "",
       tag: "",
-      description: "",
+      editorContent: "",
     },
   },
   getters: {},
@@ -49,6 +49,7 @@ export default createStore({
       api.post("/add-card-link", payload);
     },
     createRelease(context, payload) {
+      api.post("/add-release", payload);
       context.commit("UPDATE_RELEASE", payload);
     },
   },

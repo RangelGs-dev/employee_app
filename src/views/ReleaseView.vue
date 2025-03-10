@@ -101,9 +101,8 @@
         </h2>
         <div class="atualizacao">
           <div class="texto-atualizacao">
-            <p>
-              {{ communicateItem.descricao }}
-            </p>
+            <span v-html="communicateItem.descricao"></span>
+            <!-- {{ communicateItem.descricao }} -->
           </div>
         </div>
       </div>
