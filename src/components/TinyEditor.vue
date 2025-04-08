@@ -29,16 +29,21 @@ console.log(content);
 </script> -->
 <template>
   <main id="sample">
-    <Editor
-      api-key="en8nx3ar3628qe3gtpidg46gctbzvsx607xs446d0sgko2wc"
-      v-model="content"
-      :init="config"
-    />
+    <Editor v-model="content" :init="config" />
   </main>
 </template>
 
 <script>
+// api-key="en8nx3ar3628qe3gtpidg46gctbzvsx607xs446d0sgko2wc"
 import Editor from "@tinymce/tinymce-vue";
+import "tinymce/tinymce";
+import "tinymce/themes/silver/theme";
+import "tinymce/icons/default";
+
+import "tinymce/plugins/link";
+import "tinymce/plugins/table";
+import "tinymce/plugins/image";
+import "tinymce/plugins/code";
 
 export default {
   components: {
@@ -48,12 +53,15 @@ export default {
     return {
       content: "",
       config: {
-        plugins: "lists link image table code help wordcount",
+        license_key: "gpl",
+        plugins: "lists link image table code wordcount",
         menubar: "file format",
         toolbar:
-          "undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | outdent indent",
+          "undo redo | bold italic | alignleft aligncenter alignright alignjustify | outdent indent",
         statusbar: false,
+        promotion: false,
         width: "400px",
+        base_url: "/tinymce/",
       },
     };
   },

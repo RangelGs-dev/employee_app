@@ -35,6 +35,7 @@ export default {
     url() {
       const query = serialize(this.$route.query);
       // return `/cardLinks?_limit=12"${query}`;
+      console.log("Chegou no cardLink: ", query);
       return query;
     },
   },
