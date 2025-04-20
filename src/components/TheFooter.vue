@@ -114,7 +114,7 @@ export default {
 <style scoped>
 footer {
   width: 100vw;
-  margin-top: 80px;
+  /* margin-top: 80px; */
   background-color: #ffffff;
 }
 
@@ -127,7 +127,6 @@ footer {
 
 .footer-coop {
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   gap: 20px;
   padding: 10px;

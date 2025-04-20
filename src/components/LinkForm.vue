@@ -95,9 +95,6 @@ form-content {
 
 form {
   display: grid;
-  /* grid-template-columns: 100px 1fr; */
-  /* gap: 10px; */
-  /* align-items: baseline; */
   justify-content: center;
   margin: 0 auto;
   max-width: 600px;
@@ -114,7 +111,6 @@ select {
 }
 
 .btn {
-  /* grid-column: 2; */
   max-width: 400px;
   box-shadow: 0 8px 8px rgba(30, 60, 90, 0.3);
 }

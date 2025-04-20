@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <TheHeader />
+    <div class="header-placeholder"></div>
     <main class="main">
       <router-view />
     </main>
@@ -45,14 +46,24 @@ body {
 }
 
 #app {
-  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
   width: 100vw;
-  height: 100vh;
   overflow-x: hidden;
 }
 
-#App::-webkit-scrollbar {
+#app::-webkit-scrollbar {
   display: none;
+}
+
+.header-placeholder {
+  height: 0px;
+}
+
+.main {
+  padding-top: 140px;
+  padding-bottom: 40px;
 }
 
 .btn {

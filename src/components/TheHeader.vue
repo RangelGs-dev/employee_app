@@ -42,10 +42,16 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
 header {
   width: 100vw;
   background-color: #ffffff;
-  margin-bottom: 60px;
+  /* margin-bottom: 60px; */
   padding: 20px 20px 10px 20px;
   border-bottom: 1px solid #e7e7ed;
 }

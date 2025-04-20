@@ -4,6 +4,7 @@ import LoginView from "@/views/LoginView.vue";
 import AddCardLinkView from "@/views/AddCardLinkView.vue";
 import ReleaseView from "@/views/ReleaseView.vue";
 import AddNewReleaseView from "@/views/AddNewReleaseView.vue";
+import AdminView from "@/views/AdminView.vue";
 
 const routes = [
   {
@@ -22,10 +23,6 @@ const routes = [
     component: AddCardLinkView,
   },
   {
-    path: "/noticias",
-    name: "noticias",
-  },
-  {
     path: "/releases",
     name: "releases",
     component: ReleaseView,
@@ -34,6 +31,11 @@ const routes = [
     path: "/add-release",
     name: "add-release",
     component: AddNewReleaseView,
+  },
+  {
+    path: "/admin",
+    name: "admin",
+    component: AdminView,
   },
 ];
 
